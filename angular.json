@@ -125,5 +125,6 @@
         }
       }
     }},
-  "defaultProject": "loginLicense"
+  "defaultProject": "loginLicense",
+
 }

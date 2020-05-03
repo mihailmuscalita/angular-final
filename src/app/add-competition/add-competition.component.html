@@ -1,0 +1,31 @@
+<mat-card-content>
+  <div id="addCompetition" class="medium-list">
+    <div class="list-viewer-wrapper">
+      <div id="formDiv"  class="list-header-title">Competition</div>
+      <form [formGroup]="competitionForm" (ngSubmit)="competitionForm.valid" novalidate>
+        <div id="formFields" class="form-container">
+          <mat-form-field>
+            <input id="competitionTitleCurrent"
+                   matInput
+                   formControlName="competitionTitleCurrent"
+                   [(ngModel)]="addModel.competitionTitleCurrent"
+                   placeholder="Enter your title">
+          </mat-form-field>
+
+          <mat-form-field>
+            <input id="competitionRewardCurrent"
+                   matInput
+                   formControlName="competitionRewardCurrent"
+                   [(ngModel)]="addModel.competitionRewardCurrent"
+                   placeholder="Enter your reward">
+          </mat-form-field>
+
+          <button mat-button class="divider" class="mat-raised-button mat-primary" [disabled]="!competitionForm.valid" (click)="addCompetition()">Add competition</button>
+          <button mat-button class="divider" class="mat-raised-button mat-primary" (click)="close()">Close</button>
+
+        </div>
+      </form>
+
+    </div>
+  </div>
+</mat-card-content>

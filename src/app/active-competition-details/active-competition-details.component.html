@@ -1,0 +1,19 @@
+<mat-card-content>
+
+  <div>
+
+    <img id="homeImg" align="middle" src="assets/DSC_2728-2.jpg"><br>
+
+    <div *ngIf="information">
+
+      <h3>{{title}}</h3><br><br>
+      <h5>{{reward}}</h5>
+
+    </div>
+
+    <h3 *ngIf="!information">You don' t have a competition available ! You can start at least once !</h3>
+
+    <button mat-button class="divider" class="mat-raised-button mat-primary" (click)="close()">Close</button>
+  </div>
+
+</mat-card-content>

@@ -1,0 +1,9 @@
+<mat-card-content>
+
+  <div>
+    <h3 *ngIf="information">You add a new competition ! Enjoy !</h3><br>
+    <h3 *ngIf="!information">You already started a competition !</h3><br>
+    <button mat-button class="divider" class="mat-raised-button mat-primary" (click)="close()">Close</button>
+  </div>
+
+</mat-card-content>

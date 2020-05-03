@@ -1,0 +1,37 @@
+
+<h2>Competition management page</h2>
+
+<button mat-button id="logoutButton" class="divider" class="mat-raised-button mat-primary" (click)="logout()">Logout</button>
+<button mat-button id="stopCompetitionButton" class="divider" class="mat-raised-button mat-primary" (click)="stopCompetition()" >Stop competition</button>
+<button mat-button id="sendEmails" class="divider" class="mat-raised-button mat-primary" (click)="sendEmails()">Send Emails</button>
+<button mat-button id="add" class="divider" class="mat-raised-button mat-primary" (click)="addCompetition()">Propose a competition !</button>
+<button mat-button id="searchActiveCompetition" class="divider" class="mat-raised-button mat-primary" (click)="searchForCompetition()">Current competition</button>
+
+
+<h4>You'll see below other proposed competitions</h4>
+
+<div id="table">
+  <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <ng-container matColumnDef="competitionTitle">
+    <mat-header-cell *matHeaderCellDef>Title</mat-header-cell>
+    <mat-cell *matCellDef="let competitionmodel">{{competitionmodel.competitionTitle}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="competitionReward">
+      <mat-header-cell *matHeaderCellDef>Reward</mat-header-cell>
+      <mat-cell *matCellDef="let competitionmodel">{{competitionmodel.competitionReward}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="buttonStop">
+      <mat-header-cell *matHeaderCellDef></mat-header-cell>
+      <mat-cell *matCellDef="let competitionmodel"><button mat-button class="divider" class="mat-raised-button" id="{{competitionmodel.idCompetition}}" (click)="onCompetitionSubmit($event)">Add active competition</button></mat-cell>
+    </ng-container>
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+  </mat-table>
+  <mat-paginator [length]="100"
+                 [pageSize]="5"
+                 [pageSizeOptions]="[5, 10, 25, 100]">
+  </mat-paginator>
+
+
+</div>
+

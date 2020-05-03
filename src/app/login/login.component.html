@@ -1,0 +1,30 @@
+<div id="loginForm" class="medium-list">
+  <div class="list-viewer-wrapper">
+    <div class="list-header-title">Login</div>
+    <form [formGroup]="loginForm" (ngSubmit)="loginForm.valid && onLoginSubmit()" novalidate>
+      <div class="form-container">
+        <mat-form-field>
+          <input id="name"
+                  matInput
+                  formControlName="name"
+                  [(ngModel)]="user.name"
+                  placeholder="Enter your name">
+        </mat-form-field>
+
+        <mat-form-field>
+          <input id="password"
+                 matInput
+                 formControlName="password"
+                 [(ngModel)]="user.password"
+                 placeholder="Enter your password">
+        </mat-form-field>
+
+        <button mat-button class="divider" class="mat-raised-button mat-primary" [disabled]="!loginForm.valid">Login</button><br>
+
+        <button mat-button class="divider" class="mat-raised-button mat-primary" (click)="onCloseForm()">Close</button>
+
+      </div>
+    </form>
+
+  </div>
+</div>
